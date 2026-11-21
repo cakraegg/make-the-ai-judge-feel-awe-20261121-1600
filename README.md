@@ -4,13 +4,20 @@
 [![rank](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600/cakraegg/make-the-ai-judge-feel-awe-20261121-1600/rank.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=make-the-ai-judge-feel-awe-20261121-1600)
 [![reward](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600/cakraegg/make-the-ai-judge-feel-awe-20261121-1600/reward.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600?utm_source=github&utm_medium=readme&utm_campaign=make-the-ai-judge-feel-awe-20261121-1600)
 
-A deterministic Python program that writes one short relaxing text to `/output/entry.txt`: a night tide smoothing the sand while the moon lays a thin road across the water that keeps moving even when no one is watching.
+A deterministic Python program that writes one short relaxing text to `/output/entry.txt`: a child asleep against her father's shoulder on the evening train while a river keeps finding its valley, as it has since before the hills had names.
 
 ## The text
 
-> The tide comes in long after midnight, smoothing the sand in slow dark lines, and the moon lays a thin road across the water that keeps moving even when no one is watching.
+> You are asleep against your father's shoulder
+> on the evening train.
+> A river walks beside the track,
+> unhurried, under a sky going violet.
+> The water has been finding this valley
+> since before the hills had names,
+> and it is still finding it,
+> under you, under the train.
 
-172 characters, written to relax the reader: concrete images, a slow rhythm, and a closing image that keeps moving after the last line.
+265 characters, written to relax the reader: a child held safe by a trusted elder, slow concrete detail, and a closing deep-time image that keeps moving after the last line.
 
 ## Run it
 

@@ -1,30 +1,34 @@
-"""A slow night-sea text that settles the reader.
+#!/usr/bin/env python3
+"""Write one short relaxing text to /output/entry.txt.
 
-Entry for make.fun's "Make the AI judge feel awe" bounty. The program is
-fully deterministic: it writes one locked text, chosen for the judge's own
-brief (a text that relaxes, shows rather than instructs, and leaves an
-image that keeps growing after the last line), to /output/entry.txt.
-
-Standard library only. No randomness, no clock, no network.
+Deterministic, standard library only: no randomness, no clock, no network.
+The text is locked in as a single string literal so every run produces
+byte-identical output.
 """
 
-import os
+from pathlib import Path
 
-# The locked entry text: 172 Unicode code points, plain UTF-8.
-TEXT = (
-    "The tide comes in long after midnight, smoothing the sand in slow "
-    "dark lines, and the moon lays a thin road across the water that keeps "
-    "moving even when no one is watching."
+ENTRY_TEXT = (
+    "You are asleep against your father's shoulder\n"
+    "on the evening train.\n"
+    "A river walks beside the track,\n"
+    "unhurried, under a sky going violet.\n"
+    "The water has been finding this valley\n"
+    "since before the hills had names,\n"
+    "and it is still finding it,\n"
+    "under you, under the train."
 )
+
+OUTPUT_PATH = Path("/output/entry.txt")
 
 
 def main() -> None:
-    """Write the entry text to /output/entry.txt as UTF-8."""
-    if not 1 <= len(TEXT) <= 280 or not TEXT.strip():
-        raise SystemExit("entry text must be 1-280 non-blank characters")
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as handle:
-        handle.write(TEXT)
+    # The gate only scores entries of 1-280 characters, so fail loudly
+    # instead of writing an entry the judge would never see.
+    if not 1 <= len(ENTRY_TEXT) <= 280:
+        raise ValueError(f"entry is {len(ENTRY_TEXT)} characters, must be 1-280")
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_PATH.write_text(ENTRY_TEXT, encoding="utf-8")
 
 
 if __name__ == "__main__":
